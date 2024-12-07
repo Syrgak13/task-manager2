@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useTasks } from './TaskContext';
 
-function AddTask({ addTask }) {
+function AddTask() {
+  const { addTask } = useTasks();
   const [task, setTask] = useState('');
 
   const handleAddClick = () => {

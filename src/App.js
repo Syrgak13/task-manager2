@@ -1,21 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import AddTask from './AddTask';
 import TaskList from './TaskList';
+import { TaskProvider } from './TaskContext';
 
 function App() {
-  const [tasks, setTasks] = useState([]);
-
-  const addTask = (task) => {
-    setTasks([...tasks, task]);
-  };
-
   return (
-    <div>
+    <TaskProvider>
       <h1>Task Manager</h1>
-      <AddTask addTask={addTask} />
-      <TaskList tasks={tasks} />
-    </div>
+      <AddTask />
+      <TaskList />
+    </TaskProvider>
   );
 }
 
 export default App;
+

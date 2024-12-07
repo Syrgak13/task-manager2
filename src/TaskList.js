@@ -1,6 +1,9 @@
 import React from 'react';
+import { useTasks } from './TaskContext';
 
-function TaskList({ tasks }) {
+function TaskList() {
+  const { tasks } = useTasks();
+
   return (
     <ul>
       {tasks.map((task, index) => (
