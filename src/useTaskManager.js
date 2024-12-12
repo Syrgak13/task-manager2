@@ -7,8 +7,8 @@ export function useTaskManager() {
     setTasks([...tasks, task]);
   };
 
-  const deleteTask = (taskToDelete) => {
-    setTasks(tasks.filter((task) => task !== taskToDelete));
+  const deleteTask = (indexToDelete) => {
+    setTasks(tasks.filter((_, index) => index !== indexToDelete));
   };
 
   return { tasks, addTask, deleteTask };

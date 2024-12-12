@@ -2,12 +2,15 @@ import React from 'react';
 import { useTasks } from './TaskContext';
 
 function TaskList() {
-  const { tasks } = useTasks();
+  const { tasks, deleteTask } = useTasks();
 
   return (
     <ul>
       {tasks.map((task, index) => (
-        <li key={index}>{task}</li>
+        <li key={index}>
+          {task}
+          <button onClick={() => deleteTask(index)}>Delete</button>
+        </li>
       ))}
     </ul>
   );
